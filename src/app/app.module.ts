@@ -22,10 +22,16 @@ import { SearchPipe } from './search.pipe';
 
 const routes =[
   {path:'', component: HomePageComponent},
-  {path:'setup', component: SetupPageComponent},
+  {path:'setup', component: SetupPageComponent, children:[
+    {path:'number', component: FilterNumberComponent}, 
+    {path:'gender', component: FilterGenderComponent},
+    {path:'nat', component: FilterNatComponent}
+  ]},
   {path:'add', component: NewUserComponent},
   { path: '**', redirectTo: '' }  
+  // {path:'add', component: NewUserComponent} 
 ]
+
 
 @NgModule({
   declarations: [
