@@ -1,0 +1,20 @@
+<p>
+    <label>
+      <input type="checkbox" [checked]="maleChecked" (click)="getMale()"/>
+      <span>Мужчины</span>
+    </label>
+</p>
+<p>
+    <label>
+      <input type="checkbox" [checked]="femaleChecked" (click)="getFemale()"/>
+      <span>Женщины</span>
+    </label>
+</p>
+<p>  
+<label>
+    <input type="checkbox" [disabled]="allChecked" (click)="getGender()"/>
+    <span>Все</span>
+  </label>
+</p>
+<!-- disabled="disabled" -->
+<!-- [disabled]="diActivat" -->

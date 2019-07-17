@@ -1,0 +1,22 @@
+<form class="col s12">
+  <div class="row">
+    <div class="input-field col s3">
+      <label for="user_name">Найти друга по имени</label>
+      <input id="user_name" type="text" class="validate" [(ngModel)] = "searchStr" name="userName">
+    </div>
+    <div class="input-field col s3">
+      <a class="btn-floating btn-large waves-effect waves-light" (click)="getReg()" [ngClass] = "{'pulse':isPuls}" routerLink="/add"> <i class="material-icons">add</i></a> 
+    </div>         
+  </div>
+</form>
+<router-outlet></router-outlet>  
+
+<div class="row">
+    <!-- | search:searchStr -->
+  <app-card *ngFor="let cozCar of cazino_cards " (puls)="getPuls()" 
+    [card] = "cozCar" 
+  >
+</app-card>
+</div>
+
+<app-scroll-top></app-scroll-top>

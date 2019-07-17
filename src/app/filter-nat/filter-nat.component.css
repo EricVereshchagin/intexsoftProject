@@ -1,0 +1,6 @@
+.collection{
+    width: 300px;
+}
+.collection-item{
+    cursor: pointer;
+}

@@ -1,0 +1,65 @@
+
+
+<div class = "container">
+<!-- 
+<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+  <li class="tab"><a class="active">Добавления данных</a></li>
+  <li class="tab"><a class="active">Отоброжение отоброжение</a></li>
+</ul>    
+       -->
+  <div class="row">
+    <form class="col s12" [formGroup]="fullNameControl" (ngSubmit)="onSubmit()">
+      <div class="row">
+           <h3>Добавления карты</h3>
+        <div class="input-field col s2">
+          <input formControlName="firstName" id="first_name" type="text"  [ngClass]="{ 'invalid': f.firstName.touched && f.firstName.errors || f.firstName.errors && isSubmited }">
+          <label for="first_name">Имя</label>  
+          <div *ngIf="f.firstName.touched && f.firstName.errors || f.firstName.errors && isSubmited">
+              <span *ngIf="f.firstName.errors.required" class="helper-text">Пустое поле</span>
+              <span *ngIf="f.firstName.errors.pattern" class="helper-text">Введите имя</span>  
+          </div>
+          <!-- data-error = "text"   -->
+        </div>
+        <div class="input-field col s4">
+          <input formControlName="lastName" id="last_name" type="text" [ngClass]="{ 'invalid': f.lastName.touched && f.lastName.errors || f.lastName.errors && isSubmited }">
+          <label for="last_name">Фамилия</label>
+          <div *ngIf="f.lastName.touched && f.lastName.errors || f.lastName.errors && isSubmited">
+              <span *ngIf="f.lastName.errors.required" class="helper-text">Пустое поле</span>
+              <span *ngIf="f.lastName.errors.pattern" class="helper-text">Введите фамилию</span>  
+          </div>
+        </div>
+      
+      </div>
+      <div class="row">
+         <div class="input-field col s3">
+          <input formControlName="path" id="path" type="text" [ngClass]="{ 'invalid': f.path.touched && f.path.errors || f.path.errors && isSubmited }">
+          <label for="path">Адрес</label>
+          <div *ngIf="f.path.touched && f.path.errors || f.path.errors && isSubmited">
+              <span *ngIf="f.path.errors.required" class="helper-text">Пустое поле</span>  
+          </div>
+        </div> 
+      </div>
+      <div class="row">
+          <div class="input-field col s6">
+            <input formControlName="email" id="email" type="text"  [ngClass]="{ 'invalid': f.email.touched && f.email.errors || f.email.errors && isSubmited }">
+            <label for="email">Email</label>
+            <div *ngIf="f.email.touched && f.email.errors || f.email.errors && isSubmited">
+                <span *ngIf="f.email.errors.required" class="helper-text">Пустое поле</span>
+                <span *ngIf="f.email.errors.email" class="helper-text">Введите валидный email</span>  
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <input  formControlName="password" id="password" type="password"  [ngClass]="{ 'invalid': f.password.touched && f.password.errors || f.password.errors && isSubmited }">
+          <label for="password">Password</label>
+          <div *ngIf="f.password.touched && f.password.errors || f.password.errors && isSubmited">
+              <span *ngIf="f.password.errors.required" class="helper-text" >Пустое поле</span>
+              <span *ngIf="f.password.errors.minlength" class="helper-text">От 6 символов и больше</span>  
+          </div>
+        </div>
+      </div>
+        <button class="waves-effect waves-light btn">Добавить</button>  
+    </form>
+  </div>
+</div>

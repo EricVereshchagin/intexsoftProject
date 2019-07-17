@@ -1,0 +1,3 @@
+<div class="collection">
+  <a class="collection-item" *ngFor="let item of list" (click)="onSelectItem(item)" [class.active]="item == activeItem">{{ item }}</a>
+</div>

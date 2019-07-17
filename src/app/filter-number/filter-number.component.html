@@ -1,0 +1,15 @@
+<form class="col s12">  
+    <div class="row">
+        <div class="input-field col s3">
+            <input [formControl]="sizePage" id="last_name" type="text"  [(ngModel)]="size" name="sizePage" [ngClass]="{ 'invalid': f.touched && f.errors || f.errors && isSubmited }">
+            <label for="last_name">Колличество карточек за раз </label>
+            <div *ngIf="f.touched && f.errors || f.errors && isSubmited">
+                <span *ngIf="f.errors.required" class="helper-text">Пустое поле</span>
+                <span *ngIf="f.errors.pattern" class="helper-text">Введите числовое значение</span>
+                <span *ngIf="f.errors.max" class="helper-text">Неболее 5000</span>  
+            </div>
+            <div>
+              <a class="waves-effect waves-light btn" (click) ="getChange()">Применить</a>
+            </div>
+          </div>
+    </div>

@@ -1,0 +1,29 @@
+<div class="col"> 
+    <div class="card" appHover>
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{ card.image }}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{ card.name | uppercase}} <p><span class ="age">Возраст: {{card.age}}</span></p> <i class="material-icons right">more_vert</i></span>
+        <p>
+          <a (click)= "onClick()">
+            Написать             
+          </a>
+          
+        </p> 
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{ card.name }}<i class="material-icons right">close</i></span>
+        <p>Адрес:</p>
+        <p>{{card.geo}}</p>
+        <!-- <p> Дата рождения:</p>
+        <p>{{card.date}}</p> -->
+        <p>Пол:</p>
+        <p>{{card.gender}}</p>
+        <p> Тел:</p>
+        <p>{{card.phone}}</p>
+        <p> email:</p>
+        <p>{{card.eml}}</p>   
+      </div>
+    </div>
+  </div>
