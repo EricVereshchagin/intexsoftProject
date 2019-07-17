@@ -13,9 +13,9 @@ export class CardsService {
   getCazinoCards(){
     return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location,dob,email,phone&results='+this.size+'&gender='+this.gender+'&nat='+this.nat+'')
     .pipe(map(response => {
-      let cazino_cards = response["results"];
-      console.log(cazino_cards)
-      return cazino_cards.map(function (user:any) {
+      let cards = response["results"];
+      console.log(cards)
+      return cards.map(function (user:any) {
         return {
           name: user.name.first + ' ' + user.name.last,
           image: user.picture.large,
